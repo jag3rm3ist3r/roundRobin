@@ -31,7 +31,7 @@ for round in range(maxRounds):
 def prettyPrintPairing(pairing):
 	print(pairing[0], " - vs - ", pairing[1])
 
-def playerPairings(player):
+def playerPairing(player):
 	print("\nPlayer: ", player)
 	roundNumber = 1
 	for round in rounds:
@@ -46,7 +46,7 @@ def playerPairings(player):
 
 # Print pretty output.
 for player in players:
-	playerPairings(player)
+	playerPairing(player)
 
 roundNumber = 1
 for round in rounds:
