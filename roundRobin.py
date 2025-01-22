@@ -2,9 +2,15 @@
 # Test string:
 # This Is A Test Of The Program That Does Combinations
 
+import sys
 
+# Player name input.
 input = input("Paste player names: ")
 players = input.split(" ")
+if len(players) != len(set(players)):
+	print("Duplicate player name.")
+	sys.exit()
+
 if len(players) % 2: players.append("BYE")
 maxRounds = len(players) - 1
 
