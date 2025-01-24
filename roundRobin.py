@@ -11,6 +11,7 @@ if len(players) != len(set(players)):
 	print("Duplicate player name.")
 	sys.exit()
 
+# Add bye for uneven player count.
 if len(players) % 2: players.append("BYE")
 maxRounds = len(players) - 1
 
@@ -33,8 +34,9 @@ def prettyPrintPairing(pairing):
 
 def playerPairing(player):
 	print("\nPlayer: ", player)
-	roundNumber = 1
+	roundNumber = 0
 	for round in rounds:
+		roundNumber += 1
 		for pairing in round:
 			if player not in pairing: continue
 			print("Round ", roundNumber, ": ", end='', sep='')
@@ -42,16 +44,16 @@ def playerPairing(player):
 				print(pairing[1])
 			else:
 				print(pairing[0])
-		roundNumber += 1
+			break
 
 # Print pretty output.
 for player in players:
 	playerPairing(player)
 
-roundNumber = 1
+roundNumber = 0
 for round in rounds:
-	print("\nRound ", roundNumber)
 	roundNumber += 1
+	print("\nRound ", roundNumber)
 	for pairing in round:
 		prettyPrintPairing(pairing)
 
